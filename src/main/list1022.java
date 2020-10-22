@@ -65,7 +65,7 @@ public class list1022 {
 					System.out.println("제목 : " + article.getTitle());
 					System.out.println("작성자 : 익명");
 					System.out.println("등록날짜: " + onlyDate);
-					System.out.println("조회수: " + views);
+					System.out.println("조회수: " + article.getViews());
 					System.out.println("==================");
 				}
 			}
@@ -120,8 +120,7 @@ public class list1022 {
 					System.out.println("제목 : " + target.getTitle());
 					System.out.println("내용 : " + target.getBody());
 					System.out.println("=========================");
-					target.getViews();
-					views++;
+					target.setViews(target.getViews() + 1);
 				}
 			}
 
