@@ -14,21 +14,19 @@ public class list1022 {
 		Scanner sc = new Scanner(System.in);
 
 		articles = new ArrayList<>();
-		int views = 0; //조회수
-		Article a1 = new Article(1, "제목1", "내용1", views);
-		Article a2 = new Article(2, "제목2", "내용2", views);
-		Article a3 = new Article(3, "제목3", "내용3", views);
+		int views = 0; // 조회수
+		Article a1 = new Article(1, "제목1", "내용1", "작성자", views);
+		Article a2 = new Article(2, "제목2", "내용2", "작성자", views);
+		Article a3 = new Article(3, "제목3", "내용3", "작성자", views);
 
 		articles.add(a1);
 		articles.add(a2);
 		articles.add(a3);
 
 		int no = 4;
-		
-		
-		LocalDateTime dateAndtime = LocalDateTime.now();
-        LocalDate onlyDate = LocalDate.now();
-        
+
+	
+		LocalDate onlyDate = LocalDate.now();
 
 		while (true) {
 			System.out.print("명령어 입력 : ");
@@ -63,7 +61,7 @@ public class list1022 {
 
 					System.out.println("번호 : " + article.getId());
 					System.out.println("제목 : " + article.getTitle());
-					System.out.println("작성자 : 익명");
+					System.out.println("작성자 : " + article.getNickname());
 					System.out.println("등록날짜: " + onlyDate);
 					System.out.println("조회수: " + article.getViews());
 					System.out.println("==================");
@@ -128,18 +126,17 @@ public class list1022 {
 
 	}
 
-
 	// Article ver.
-	private static Article getArticleById(int targetId) {	
-			for(int i = 0; i < articles.size(); i++) {
-				int id = articles.get(i).getId();
-				
-				if(id == targetId) {
-					return articles.get(i);
-				}
+	private static Article getArticleById(int targetId) {
+		for (int i = 0; i < articles.size(); i++) {
+			int id = articles.get(i).getId();
+
+			if (id == targetId) {
+				return articles.get(i);
 			}
-			
-			return null;
 		}
+
+		return null;
+	}
 
 }
